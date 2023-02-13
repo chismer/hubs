@@ -137,13 +137,15 @@
                             position="0 0.4 0"
                         ></a-entity>
                     </a-entity>
-
+                    <!-- 
+                        hand-pose__left
+                        hand-pose__right
+                    -->
                     <a-entity class="model" gltf-model-plus="inflate: true">
                         <template data-name="AvatarRoot">
                             <a-entity
                                 ik-controller
-                                hand-pose__left
-                                hand-pose__right
+                                                             
                                 networked-audio-analyser
                             >
                             </a-entity>
@@ -874,7 +876,7 @@
         <!-- Interactables -->
         <a-entity id="media-counter" networked-counter="max: 5;"></a-entity>
 
-        <a-entity id="pen-counter" networked-counter="max: 2;"></a-entity>
+        <a-entity id="pen-counter" networked-counter="max: 1;"></a-entity>
 
         <a-entity id="emoji-counter" networked-counter="max: 2;"></a-entity>
 
