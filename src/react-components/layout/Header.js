@@ -82,7 +82,7 @@ export function Header({
                 </a>
               </li>
             )}
-            {isAdmin && (
+            {isAdmin && false /* Hide Admin panel for KeepMeReady */ && (
               <li>
                 <a href="/admin" rel="noreferrer noopener">
                   <i>
