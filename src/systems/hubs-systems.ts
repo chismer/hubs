@@ -60,6 +60,8 @@ import { sceneLoadingSystem } from "../bit-systems/scene-loading";
 import { networkDebugSystem } from "../bit-systems/network-debug";
 import qsTruthy from "../utils/qs_truthy";
 
+import { SpawnDefaultSystem } from "./spawn-default-glb";
+
 declare global {
   interface Window {
     $S: HubsSystems;
@@ -115,7 +117,7 @@ AFRAME.registerSystem("hubs-systems", {
     this.gainSystem = new GainSystem();
     this.environmentSystem = new EnvironmentSystem(this.el);
     this.nameTagSystem = new NameTagVisibilitySystem(this.el);
-
+    this.spawnDefaultSystem = new SpawnDefaultSystem(this.el);
     window.$S = this;
   },
 

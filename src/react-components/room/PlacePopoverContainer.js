@@ -6,6 +6,7 @@ import { ReactComponent as CameraIcon } from "../icons/Camera.svg";
 // import { ReactComponent as LinkIcon } from "../icons/Link.svg";
 import { ReactComponent as GIFIcon } from "../icons/GIF.svg";
 import { ReactComponent as ObjectIcon } from "../icons/Object.svg";
+import { ReactComponent as ObjectsIcon } from "../icons/Objects.svg";
 import { ReactComponent as AvatarIcon } from "../icons/Avatar.svg";
 import { ReactComponent as SceneIcon } from "../icons/Scene.svg";
 import { ReactComponent as UploadIcon } from "../icons/Upload.svg";
@@ -84,6 +85,13 @@ export function PlacePopoverContainer({ scene, mediaSearchStore, showNonHistorie
             color: "accent3",
             label: <FormattedMessage id="place-popover.item-type.upload" defaultMessage="Upload" />,
             onSelect: () => showNonHistoriedDialog(ObjectUrlModalContainer, { scene })
+          },
+          configs.isAdmin() && {
+            id: "spawndefault",
+            icon: ObjectsIcon,
+            color: "accent2",
+            label: <FormattedMessage id="place-popover.item-type.spawndefault" defaultMessage="3D Models" />,
+            onSelect: () => scene.emit("spawn-default-glb")
           }
         ];
       }
