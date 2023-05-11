@@ -55,7 +55,13 @@ export class SpawnDefaultSystem {
           const nid = NAF.utils.createNetworkId();
 
           modelEl.setAttribute('gltf-model-plus', `src: ${url}`);
-          modelEl.setAttribute('networked', `template: #interactable-media; networkId: ${nid}`);
+          //modelEl.setAttribute('networked', `template: #interactable-media; networkId: ${nid}`);
+          modelEl.setAttribute("networked", {
+            template: "#interactable-media",
+            owner: "scene",
+            persistent: true,
+            networkId: nid
+          });
           modelEl.setAttribute('interactable', '');
           modelEl.setAttribute('spawn-glb', '');
 
