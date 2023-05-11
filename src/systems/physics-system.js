@@ -275,8 +275,14 @@ export class PhysicsSystem {
     if (bodyData.isInitialized) {
       delete this.indexToUuid[bodyData.index];
       bodyData.collisions.forEach(otherId => {
-        const otherData = this.bodyUuidToData.get(otherId).collisions;
-        otherData.splice(otherData.indexOf(uuid), 1);
+        const bodyDataChild = this.bodyUuidToData.get(otherId)
+        if (!bodyDataChild) {
+          // TODO: REMOVE ME. We should not ever see this!
+          console.error(`removeBodyChild called for unknown body id`);
+          return;
+        }
+        const otherData = bodyDataChild.collisions;
+        otherData.splice(otherData.indexOf(uuid), 1);              
       });
       this.bodyUuids.splice(this.bodyUuids.indexOf(uuid), 1);
       this.bodyUuidToData.delete(uuid);
