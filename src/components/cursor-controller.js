@@ -182,9 +182,8 @@ AFRAME.registerComponent("cursor-controller", {
             removeComponent(APP.world, left ? HoveredRemoteLeft : HoveredRemoteRight, hovered[i]);
           }
         }    
-        //this.distance = remoteHoverTarget ? this.intersection.distance : this.data.defaultDistance * playerScale;
-        //TODO: Fix Mouse grab
-        this.distance = 2;
+        this.distance = remoteHoverTarget ? this.intersection.distance : this.data.defaultDistance * playerScale;
+        
       }
       
 
