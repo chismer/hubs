@@ -45,8 +45,14 @@ export class SpawnDefaultSystem {
         'https://hubs-eviumspace-com-proxy.eviumspace.workers.dev/files/f7da2fec-0690-48c5-b001-ac1f73573fea.glb',
       ];
 
-      addDefaultGLBInLocation(glbUrls1, { x: 0, y: 1, z: 0 }, { x: -90, y: 0, z: 0 }, this.scene);
-      addDefaultGLBInLocation(glbUrls2, { x: 0.638, y: 1.717, z: 0 }, { x: 0, y: 90, z: 0 }, this.scene);
+      const glbUrls3 = [
+        'https://hubs-eviumspace-com-proxy.eviumspace.workers.dev/files/b436bcfc-f84d-46e4-a8db-95544835975f.glb',        
+      ];
+
+      addDefaultGLBInLocation(glbUrls1, { x: 0, y: 0.95, z: 0 }, { x: -90, y: 0, z: 0 }, this.scene);
+      addDefaultGLBInLocation(glbUrls2, { x: 0.638, y: 1.667, z: 0 }, { x: 0, y: 90, z: 0 }, this.scene);
+      addDefaultGLBInLocation(glbUrls3, { x: -0.40, y: 0.98, z: 0.20 }, { x: 90, y: 0, z: 90 }, this.scene);
+
 
       function addDefaultGLBInLocation(glbUrls,position,rotation,scene) {
         
